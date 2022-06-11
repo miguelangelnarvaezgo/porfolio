@@ -1,0 +1,29 @@
+include _mixins.pug
+
+-
+  let setup = {
+    nombre: {
+      type:'text',
+      name:'user_name',
+      id:'name-field',
+      class:'form-field name-field',
+      textlabel:'Nombre'},
+    email: {
+      type:'email',
+      name:'user_email',
+      id:'email-field',
+      class:'form-field email-field',
+      textlabel:'Dirección de correo elctrónico'},
+    msn: {
+      type:'textarea',
+      name:'user_msn',
+      id:'msn-field',
+      class:'form-field msn-field',
+      textlabel:'Mensaje'}    
+  }
+
+form(id='contact-form' action='#' method='post' class='form-container')
+  ul#form-content.form-content
+    each field, key in setup
+      li(id='fiel-container-'+key class='fiel-container')
+        +fielForm(setup[key])

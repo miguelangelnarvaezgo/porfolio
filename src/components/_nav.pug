@@ -1,0 +1,13 @@
+- 
+  let menuItems = {
+    inicio: {nombre: 'Inicio', link: './index.pug'},
+    curriculum: {nombre: 'Curriculum', link: './cv.pug'},
+    contacto: {nombre: 'Contacto', link: './contact.pug'}
+  }
+nav 
+  div#container-logo.container-logo
+  div#container-menu-itmes.container-menu-items
+    ul
+      each item, key in menuItems
+        li(id='menu-item-'+key class='menu-item')
+          a(href=item.link id='link-menu-item-'+key class='link-menu-item')= item.nombre

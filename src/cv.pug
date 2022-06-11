@@ -1,0 +1,65 @@
+extends ./layouts/_default.pug
+
+block body
+  block header
+    include components/_nav.pug
+    //- img(src='https://media-exp1.licdn.com/dms/image/C4E03AQG5bgIGHo3iBA/profile-displayphoto-shrink_200_200/0/1652727847548?e=1659571200&v=beta&t=fplUEVYKIS8aMkf2B4TPBkDU9f_6qqzW8s0ElAouq3s')
+        
+  aside 
+    section#index.index
+      h3 Índice
+      - let indexItems = ['Experiencia', 'Estudios'];
+      div#container-menu-itmes.container-menu-items
+        ul
+          each item, index in indexItems
+            li(id='menu-item-'+index class='menu-item')
+              a(href='#'+item id='link-menu-item-'+index class='link-menu-item')= item
+    section#datos-personales.datos-personales
+      h3 Datos personales
+      div#aside-container-contacto.aside-container
+        h4 Contacto
+        h5 Miguel Ángel Narváez
+        p mnarvaezgo@uoc.edu
+        p github.com/miguelangelnarvaezgo
+      div#aside-container-bio.aside-container
+        h4 Biografia
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+      div#aside-container-idiomas.aside-container
+        h4 Idiomas
+        table
+          thead
+            tr 
+              td Castellano
+              td Nativo
+            tr 
+              td Catalán
+              td Alto
+            tr 
+              td Inglés
+              td Báscio
+
+  block main
+    article
+      h1 Curriculum Vitae
+      h2 Miguel Ángel Narváez Gómez
+      
+      section#Experiencia
+        h3 Experiencia profesional 
+        -  
+          var experiencia = {
+          1: ['Diseñador multimedia', 'Tinkle', 'ene. 2020 - actualidad · 2 años 5 meses'],
+          2: ['Diseñador de interfaces de usuario', 'Banco Sabadell', 'oct. 2019 - ene. 2020 · 4 meses'],
+          3: ['Diseñador multimedia', 'Tinkle', 'feb. 2018 - oct. 2019 · 1 año 9 meses'],
+          4: ['Diseñador de interfaces de usuario', 'DSeed', 'may. 2016 - feb. 2018 · 1 año 10 meses']}
+      
+        +article01(experiencia, experiencia)
+    
+      section#Estudios
+        h3 Estudios
+        -  
+          var estudios = {
+          1: ['Máster en Aplicaciones Multimedia', 'Universitat Oberta de Catalunya', '2015 - 2016'],
+          2: ['Desarrollo de productos editoriales multimeda', 'E. P Salesians de Sarrià', '2015 - 2015'],
+          3: ['Graduado en Geografía y Ordenación del Territorio', 'Universidad Autónoma de Barcelona', '2010 - 2014']}
+          
+        +article01(estudios, estudios)

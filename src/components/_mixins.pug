@@ -1,0 +1,42 @@
+mixin article01(conetent, classname)
+  each item, key in conetent
+    article(class=classname)
+      h4= key+'. '+item[0]
+      h5= item[1]
+      p= item[2]      
+
+mixin card01(object, classname='')
+  mixin card(content)
+    mixin bodycard(content)
+      if content.img != ''
+        div
+          img(src=content.img)
+          
+      if content.name != ''
+        div
+          h5= content.name
+      if content.abstract != ''
+        div
+          p= content.abstract
+      if content.btn != ''
+        div
+          a(href="#")= content.btn
+    
+    if content.classname != ''
+      div.card-container(class=content.classname+'-card-container')
+        +bodycard(content)
+    else 
+      div.card-container
+        +bodycard(content)
+  
+  each obj in object
+    - obj.classname = classname
+    div(class=obj.classname+'-grid-cell')
+      +card(obj)
+
+mixin fielForm(setup)
+  label(for=setup.id)= setup.textlabel
+  if setup.type=='text' || setup.type=='email'
+    input(type=setup.type name=setup.name id=setup.id class=setup.class)
+  else if setup.type=='textarea'
+    textarea(name=setup.name id=setup.id class=setup.class)

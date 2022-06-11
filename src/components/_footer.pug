@@ -1,0 +1,11 @@
+-  
+  var content = {
+  1: {id: 'container-fb', img: './assets/logo-facebook.svg'},
+  2: {id: 'container-li', img: './assets/logo-instagram.svg'}
+  }
+  
+footer
+  div#container-content.container-content
+    each val in content
+      span(id=val.id class=container-icon) 
+        img(src=val.img)
