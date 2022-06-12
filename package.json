@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.pug --dist-dir docs",
-    "pro": "parcel src/index.pug ---dist-dir docs"
+    "dev": "parcel src/index.pug --dist-dir docs --public-url ./",
+    "pro": "parcel src/index.pug --dist-dir docs --public-url ./"
   },
   "keywords": [],
   "author": "",
