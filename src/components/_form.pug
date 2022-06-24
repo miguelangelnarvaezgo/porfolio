@@ -1,5 +1,16 @@
 include _mixins.pug
 
+// Inserta un campo de formulario
+mixin fielForm(setup)
+  div.field-container(id=setup.id+"-container")
+    label(for=setup.id)
+      p= setup.textlabel
+    if setup.type=='text' || setup.type=='email'
+      input(type=setup.type name=setup.name id=setup.id class=setup.class placeholder=setup.placeholder)
+    else if setup.type=='textarea'
+      textarea(name=setup.name id=setup.id class=setup.class placeholder=setup.placeholder)
+
+
 -
   let setup = {
     nombre: {
@@ -7,23 +18,30 @@ include _mixins.pug
       name:'user_name',
       id:'name-field',
       class:'form-field name-field',
-      textlabel:'Nombre'},
+      textlabel:'Nombre',
+      placeholder:'Tu nombre'},
     email: {
       type:'email',
       name:'user_email',
       id:'email-field',
       class:'form-field email-field',
-      textlabel:'Dirección de correo elctrónico'},
+      textlabel:'Dirección de correo elctrónico',
+      placeholder:'Tu dirección de email'},
     msn: {
       type:'textarea',
       name:'user_msn',
       id:'msn-field',
       class:'form-field msn-field',
-      textlabel:'Mensaje'}    
+      textlabel:'Mensaje',
+      placeholder:'Escribe aquí tu mensdaje'}    
   }
 
+//- Inserta el formualrio
 form(id='contact-form' action='#' method='post' class='form-container')
   ul#form-content.form-content
     each field, key in setup
-      li(id='fiel-container-'+key class='fiel-container')
-        +fielForm(setup[key])
+      li(id='field-container-'+key class='field-container-list')
+        +fielForm(setup[key])  
+  +checkbox-input('Acepto la ', 'check-ptivacy', 'Política de privacidad', '#')
+  button
+    a(href="#") ENVIAR

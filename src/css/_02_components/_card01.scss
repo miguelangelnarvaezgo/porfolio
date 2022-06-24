@@ -1,0 +1,49 @@
+@use '../_01_basics/_settings' as *;
+@use '../_01_basics/_tools' as *;
+@use '../_01_basics/_elements' as *;
+
+
+
+@media (min-width: $breakpoint-xxs) { //375
+  .card-container {
+    display: flex;
+    flex-direction: column;
+
+    padding: $space-sm;
+    border: solid 1px $hex-black;
+
+    .card-img {
+      img {
+        width: 100%;
+      }
+    }
+    .card-name {
+
+    }
+    .card-abstract {
+
+    }
+    .card-button-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex-basis: 100%;
+      .card-btn {
+
+      }
+    }
+
+  }
+}
+@media (min-width: $breakpoint-xs) { //600
+
+}
+@media (min-width: $breakpoint-sm) { //768
+
+}
+@media (min-width: $breakpoint-md) { //992x
+
+}
+@media (min-width: $breakpoint-lg) { // 1280px
+
+}

@@ -1,0 +1,19 @@
+/* Este sistema de organización de css está
+inspirado en las metodologías Atomic Design de Brad Frost (https://atomicdesign.bradfrost.com)
+e itcss de Harry Roberts (itcss.io).
+El puesto 03 pertenece a la sección de generics de Itcss:
+En Itcss, en generics se coloca código genérico de base para todo
+el proyecto, típicamente el reset de CSS,
+el Normalize o tu propio bloque de código para
+estandarizar los estilos de base usados en todos los navegadores.
+
+No obstante en manglar se considera que la finalidad de generics
+es demasiado similar al que se le da a settings, así que
+los ficheros que tipicamente encontrarías en generics
+se traslada a settings */
+
+@use "css/_01_basics/_settings" as *;
+@use "css/_01_basics/_tools" as *;
+@use "css/_01_basics/_elements" as *;
+@use "css/_02_components/_components" as *;
+@use "css/_03_layouts/_layouts" as *;

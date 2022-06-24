@@ -1,0 +1,28 @@
+mixin cv-content(conetent, classname)
+  each item, key in conetent
+    div.row-content-container(class=classname+'-container')
+      div.row-content-number
+        h5=key+'. '
+      div.row-content(class=classname+'-content')
+        h5=item[0]
+        h6= item[1]
+        p= item[2]
+      
+mixin experiencia(classname = 'no-class-name')
+  -  
+    let experiencia = {
+    1: ['Diseñador multimedia', 'Tinkle', 'ene. 2020 - actualidad · 2 años 5 meses'],
+    2: ['Diseñador de interfaces de usuario', 'Banco Sabadell', 'oct. 2019 - ene. 2020 · 4 meses'],
+    3: ['Diseñador multimedia', 'Tinkle', 'feb. 2018 - oct. 2019 · 1 año 9 meses'],
+    4: ['Diseñador de interfaces de usuario', 'DSeed', 'may. 2016 - feb. 2018 · 1 año 10 meses']}
+
+  +cv-content(experiencia, classname)
+  
+mixin estudios(classname = 'no-class-name')
+  -  
+    let estudios = {
+    1: ['Máster en Aplicaciones Multimedia', 'Universitat Oberta de Catalunya', '2015 - 2016'],
+    2: ['Desarrollo de productos editoriales multimeda', 'E. P Salesians de Sarrià', '2015 - 2015'],
+    3: ['Graduado en Geografía y Ordenación del Territorio', 'Universidad Autónoma de Barcelona', '2010 - 2014']}
+    
+  +cv-content(estudios, classname)

@@ -1,26 +1,20 @@
-mixin article01(conetent, classname)
-  each item, key in conetent
-    article(class=classname)
-      h4= key+'. '+item[0]
-      h5= item[1]
-      p= item[2]      
-
 mixin card01(object, classname='')
   mixin card(content)
     mixin bodycard(content)
       if content.img != ''
-        div
+        div.card-img
           img(src=content.img)
           
       if content.name != ''
-        div
+        div.card-name
           h5= content.name
       if content.abstract != ''
-        div
+        div.card-abstract
           p= content.abstract
       if content.btn != ''
-        div
-          a(href="#")= content.btn
+        div.card-button-container
+          button.card-btn(name="card" type="button")
+            a(href="#")= content.btn
     
     if content.classname != ''
       div.card-container(class=content.classname+'-card-container')
@@ -31,12 +25,25 @@ mixin card01(object, classname='')
   
   each obj in object
     - obj.classname = classname
-    div(class=obj.classname+'-grid-cell')
-      +card(obj)
+    //- div(class=obj.classname+'-grid-cell')
+    +card(obj)
 
-mixin fielForm(setup)
-  label(for=setup.id)= setup.textlabel
-  if setup.type=='text' || setup.type=='email'
-    input(type=setup.type name=setup.name id=setup.id class=setup.class)
-  else if setup.type=='textarea'
-    textarea(name=setup.name id=setup.id class=setup.class)
+mixin checkbox-input(label='no label text', id='no-id', linktext='', link='currupipi')
+  div#checkbox-input-container.checkbox-input-container
+    input(type='checkbox' name='check' id=id class='check-input') 
+    label(id="btn-check-label" class="btn-check-label" for=id)
+      div.checkbox-container
+        span.check √
+      if linktext != ''
+        span= label 
+          a(href=link)= linktext
+      else if linktext == ''  
+        span= label
+    
+
+//- mixin fielForm(setup)
+//-   label(for=setup.id)= setup.textlabel
+//-   if setup.type=='text' || setup.type=='email'
+//-     input(type=setup.type name=setup.name id=setup.id class=setup.class)
+//-   else if setup.type=='textarea'
+//-     textarea(name=setup.name id=setup.id class=setup.class)

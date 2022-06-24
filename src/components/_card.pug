@@ -1,0 +1,31 @@
+mixin card01(object, classname='')
+  mixin card(content)
+    mixin bodycard(content)
+      if content.img != ''
+        div.card-img
+          img(src=content.img)
+      else if content.img == '' && content.svg != ''
+        div.card-img!= content.svg
+        
+      if content.name != ''
+        div.card-name
+          h5= content.name
+      if content.abstract != ''
+        div.card-abstract
+          p= content.abstract
+      if content.btn != ''
+        div.card-button-container
+          button.card-btn(name="card" type="button")
+            a(href="#")= content.btn
+    
+    if content.classname != ''
+      div.card-container(class=content.classname+'-card-container')
+        +bodycard(content)
+    else 
+      div.card-container
+        +bodycard(content)
+  
+  each obj in object
+    - obj.classname = classname
+    //- div(class=obj.classname+'-grid-cell')
+    +card(obj)

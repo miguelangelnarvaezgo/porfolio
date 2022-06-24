@@ -4,10 +4,23 @@
     curriculum: {nombre: 'Curriculum', link: './cv.pug'},
     contacto: {nombre: 'Contacto', link: './contact.pug'}
   }
+
+
+
+
+input(id="btn-menu" type="checkbox" onchange="goMenu(value)")
+
 nav 
   div#container-logo.container-logo
+  
   div#container-menu-itmes.container-menu-items
     ul
       each item, key in menuItems
         li(id='menu-item-'+key class='menu-item')
           a(href=item.link id='link-menu-item-'+key class='link-menu-item')= item.nombre
+  div#container-label.container-label
+    label(id="btn-menu-label" for="btn-menu")
+      - var n = 0;
+      while n < 3
+        div(id="bar-"+n class="bar")
+        -n++

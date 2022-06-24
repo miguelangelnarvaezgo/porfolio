@@ -15,10 +15,21 @@ html(lang="es")
   block body
     body
       block header
-        header
+        include ../components/_header.pug
       block main
         main
       block footer
         include ../components/_footer.pug
       block script
         script(type="module" src="./index.js")
+        script.
+          let bin = false;
+          const goMenu = (value) => {
+            if (bin == false) {
+              bin = true;
+            } else {
+              bin = false;
+            }
+            console.log(bin);
+            console.log(value);
+          }
