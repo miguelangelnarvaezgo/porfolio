@@ -271,17 +271,17 @@ button {
 
 /*-----------PADDING's----------*/
 
-@media (min-width: $breakpoint-xxs) { //600
+@media (min-width: $breakpoint-xxs) { //320
   main, header {
-    margin: $space-lg;
+    margin: $space-sm;
     margin-bottom: $space-xxs;
     margin-top: $space-md;
   }
 
 }
-@media (min-width: $breakpoint-xs) { //600
+@media (min-width: $breakpoint-xs) { //475
   main, header {
-    margin: $space-lg;
+    margin: $space-md;
     margin-bottom: $space-xxs;
     margin-top: $space-lg;
   }
@@ -303,7 +303,7 @@ button {
 }
 @media (min-width: $breakpoint-lg) { // 1280px
   main, header {
-    margin: calc($space-xxxl*2);
+    margin: calc($space-xxxl*1.5);
     margin-bottom: $space-xxs;
     margin-top: $space-xxl;
   }

@@ -334,15 +334,15 @@ button a {
   visibility: visible;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   main, header {
-    margin: 32px 48px 8px;
+    margin: 32px 24px 8px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 475px) {
   main, header {
-    margin: 48px 48px 8px;
+    margin: 48px 32px 8px;
   }
 }
 
@@ -360,7 +360,7 @@ button a {
 
 @media (min-width: 1280px) {
   main, header {
-    margin: 80px 192px 8px;
+    margin: 80px 144px 8px;
   }
 }
 
@@ -376,7 +376,7 @@ button a {
 
 #container-menu-itmes {
   opacity: 0;
-  margin-right: -350px;
+  margin-right: -475px;
   transition: all .6s;
 }
 
@@ -402,7 +402,7 @@ button a {
   opacity: 1;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   nav {
     flex-direction: row;
     justify-content: flex-end;
@@ -435,6 +435,62 @@ button a {
     background-color: #000;
   }
 
+  nav .container-menu-items {
+    flex-basis: 100%;
+  }
+
+  nav .container-menu-items ul {
+    flex-direction: column;
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  nav .container-menu-items ul li {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 16px;
+    padding-right: 24px;
+    display: flex;
+  }
+}
+
+@media (min-width: 475px) {
+  nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 16px;
+    display: flex;
+    overflow-x: hidden;
+  }
+
+  nav .container-label {
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+  }
+
+  nav .container-label label {
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+    display: flex;
+  }
+
+  nav .container-label label .bar:not(:first-of-type) {
+    margin-top: 4px;
+  }
+
+  nav .container-label label .bar {
+    height: 4px;
+    width: 24px;
+    background-color: #000;
+  }
+
+  nav .container-menu-items {
+    flex-basis: 0;
+  }
+
   nav .container-menu-items ul {
     flex-direction: row;
     justify-content: flex-end;
@@ -444,12 +500,13 @@ button a {
   nav .container-menu-items ul li {
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 0;
     padding-right: 24px;
     display: flex;
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   footer {
     background-color: #000;
     margin-top: 192px;
@@ -469,7 +526,7 @@ button a {
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   .card-container {
     border: 1px solid #000;
     flex-direction: column;
@@ -489,7 +546,7 @@ button a {
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   form ul li .field-container {
     flex-direction: column;
     flex-basis: 100%;
@@ -531,7 +588,7 @@ button a {
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   .sobremi-container .content-container {
     flex-direction: column-reverse;
     display: flex;
@@ -584,7 +641,7 @@ button a {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 475px) {
   .sobremi-container .content-container {
     flex-direction: column-reverse;
     display: flex;
@@ -714,7 +771,7 @@ button a {
   }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 320px) {
   .aside-container-contacto div {
     flex-direction: row;
     align-items: center;
