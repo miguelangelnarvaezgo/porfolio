@@ -49,6 +49,7 @@ table {
   --font-size-base-lg: 18px;
 }
 
+/* Bon ús de responsive i tipografies amb variables */
 @media (min-width: 0) {
   :root {
     --font-size-base: var(--font-size-base-sm);
@@ -325,7 +326,7 @@ button a {
 .checkbox-input-container label span a {
   text-decoration: underline;
 }
-
+/* Bon ús de selectors */
 .checkbox-input-container .check-input:checked ~ .btn-check-label > .checkbox-container {
   background-color: #94b1f5;
 }

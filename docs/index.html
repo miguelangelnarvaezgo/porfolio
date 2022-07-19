@@ -8,6 +8,7 @@
         <title>CV de MANarváez</title>
     </head>
     <body>
+<!-- comentaris sobre el codi compilat -->
         <header>
             <input id="btn-menu" type="checkbox" onchange="goMenu(value)" />
             <nav>
@@ -27,6 +28,7 @@
                     </label>
                 </div>
             </nav>
+            <!-- es pot mirar d'utilitzar els títols directament en lloc de posar-los dins d'un div -->
             <div class="header-container" id="header-container"><h1>Porfolio de Miguel A. Narváez</h1></div>
         </header>
         <main>
@@ -56,9 +58,14 @@
                             </p>
                         </div>
                         <div class="card-button-container">
+                            <!-- utilitzar button o a, però no els dos alhora
+                            Si el botó ha d'activar alguna interacció (deplegable, enviament, popup... ) -> fer servir <button></button>
+                            Si el botó ha de portar a un altre lloc de la mateixa pàgina o a una altra pàgina o una altra web -> fer servir <a href=""></a>
+                            No hi ha problema en donar aspecte de botó a un enllaç (tot i que visualment, de vegades pot confondre), però s'hauria d'utilitzar el tag corresponent en cada cas. -->
                             <button class="card-btn" name="card" type="button"><a href="#">Saber más</a></button>
                         </div>
                     </div>
+                    <!-- Que las card sigui un div està bé (com a alternativa, opcionalment podria ser un <article></article>) es pot mirar de posar els elements de la card directament amb el seu tag, sense posar-los cadascun a dins d'un <div></div> -->
                     <div class="card-container projects-card-container">
                         <div class="card-img"><img src="https://picsum.photos/300/200" /></div>
                         <div class="card-name"><h5>Diseño UI</h5></div>
@@ -113,6 +120,7 @@
                 <div class="skills-container-col-02 skills-container" id="skills-col-02">
                     <div class="card-container skills-card-container">
                         <div class="card-img">
+                            <!-- bon ús de svg inline -->
                             <svg width="100%" height="100%" viewbox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="html-grup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="html">
@@ -169,6 +177,8 @@
                 <div class="hobbies-container-col-02 hobbies-container" id="hobbies-col-02">
                     <div class="card-container hobbies-card-container">
                         <div class="card-img"><img src="https://picsum.photos/300/200" /></div>
+                        <!-- si es vol utilitzar un tag títol, hauria de ser h3, per respectar la jeraquia: la secció té un h2, si hi ha algun subapartat hauria de ser h3, després h4...
+                        Si s'utilitza h5 per tamany, millor posar h3 i modificar-lo per CSS, o utilitzar un altre tag: p, div o span per exemple -->
                         <div class="card-name"><h5>Alpinismo</h5></div>
                     </div>
                     <div class="card-container hobbies-card-container">
